@@ -20,19 +20,29 @@ const Projects = () => {
     <>
       <Swiper
         spaceBetween={30}
-        slidesPerView={3} // Show 3 slides at a time
-        loop={true} // Enable continuous loop
+        slidesPerView={3}
+        loop={true} 
         autoplay={{
-          delay: 0, // No delay between transitions
+          delay: 0, 
           disableOnInteraction: false,
         }}
-        speed={1000} // Slow down the transition speed
+        speed={1000} 
         modules={[Autoplay]}
         className="mySwiper mt-20"
       >
         {projectPhotos.map((photo, index) => (
           <SwiperSlide key={index}>
-            <img src={photo.src} alt={photo.alt} className="rounded-2xl w-25 h-25" />
+            <Image 
+            src={photo.src} 
+            alt={photo.alt} 
+            className="rounded-2xl hover:scale-110 transition-all duration-500" 
+            width={200}
+            height={200}
+            style={{
+              maxWidth: '100%',
+              height: 'auto',
+            }}
+            />
           </SwiperSlide>
         ))}
       </Swiper>
